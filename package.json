@@ -1,6 +1,6 @@
 {
-  "name": "kscpm-rsbuild",
-  "version": "1.0.1",
+  "name": "generator-kscpm-rsbuild",
+  "version": "1.0.0",
   "description": "Rsbuild脚手架",
   "main": "src/index.js",
   "scripts": {
@@ -8,6 +8,9 @@
     "release-patch": "npm version patch && git push --tags && git push && npm publish",
     "release": "npm run release-patch"
   },
+  "files": [
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/m2417181901/kscpm-Rsbuild.git"
