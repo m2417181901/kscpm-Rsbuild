@@ -1,6 +1,6 @@
 {
   "name": "generator-kscpm-rsbuild",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rsbuild脚手架",
   "main": "src/index.js",
   "scripts": {
