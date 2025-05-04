@@ -1,0 +1,11 @@
+query DescribeDemo($region: String!) {
+    DescribeDemo(Region: $region) {
+        DemoItemSet {
+            ...Demo
+        }
+    }
+}
+
+fragment Demo on DemoItem {
+    Id
+}

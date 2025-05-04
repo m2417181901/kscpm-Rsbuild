@@ -1,0 +1,96 @@
+{
+  "name": "<%=name%>",
+  "private": true,
+  "version": "0.0.0",
+  "description": "<%=description%>",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=test vite",
+    "dev:https": "cross-env NODE_ENV=production NODE_HOST=preview vite --https --mode=production",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:test": "npm run build -- --mode=development --base=/create/",
+    "build:online": "npm run build -- --mode=production",
+    "preview": "vite preview",
+    "codegen": "NODE_TLS_REJECT_UNAUTHORIZED=0 graphql-codegen --config codegen.js",
+    "codegen:https": "cross-env NODE_ENV=production NODE_TLS_REJECT_UNAUTHORIZED=0 graphql-codegen --config codegen.js",
+    "server": "nodemon --exec npx overlord-server",
+    "server:https": "OVERLORD_ENV=production nodemon --exec npx overlord-server --https --envFile=.env.production",
+    "start": "npm run server & npm run codegen & npm run dev --watch",
+    "start:https": "npm run server:https & npm run dev:https & npm run codegen:https -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "<%=repository%>"
+},
+"author": "<%=author%>",
+  "dependencies": {
+    "class-validator": "^0.13.2",
+    "graphql": "15",
+    "graphql-tag": "^2.12.6",
+    "lodash": "^4.17.21",
+    "overlord-server": "^0.2.3",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
+    "vue-router": "^4.2.2"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.6.8",
+    "@emotion/css": "^11.9.0",
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/typescript": "^2.5.1",
+    "@graphql-codegen/typescript-operations": "^2.4.1",
+    "@graphql-codegen/typescript-vue-apollo": "^3.2.14",
+    "@graphql-eslint/eslint-plugin": "^3.10.6",
+    "@king-design/vue": "^3.4.5",
+    "@prettier/plugin-pug": "^2.1.1",
+    "@types/lodash": "^4.14.182",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@volar/vue-language-plugin-pug": "^1.0.18",
+    "@vue/apollo-composable": "^4.0.0-alpha.17",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.1.1",
+    "eslint-plugin-vue-pug": "^0.5.3",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.7.1",
+    "pug": "^3.0.2",
+    "sass": "^1.53.0",
+    "terser": "^5.18.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4",
+    "vite": "^4.4.6",
+    "vite-plugin-checker": "^0.6.1",
+    "vite-plugin-eslint": "^1.6.1",
+    "vite-plugin-i18never": "^1.1.13",
+    "vite-plugin-require-transform": "^1.0.9",
+    "vite-plugin-vite": "^0.1.0",
+    "vite-plugin-vue-type-imports": "^0.2.5",
+    "vue": "^3.2.25",
+    "vue-eslint-parser": "^9.0.3",
+    "vue-router": "^4.2.2",
+    "vue-tsc": "^1.0.18",
+    "@ksyun-internal/versatile": "^0.5.9",
+    "@rsbuild/core": "^1.2.0",
+    "@rsbuild/plugin-basic-ssl": "^1.1.1",
+    "@rsbuild/plugin-eslint": "^1.1.0",
+    "@rsbuild/plugin-pug": "^1.0.2",
+    "@rsbuild/plugin-type-check": "^1.2.1",
+    "@rsbuild/plugin-vue": "^1.0.5"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "./server"
+    ],
+    "ext": "ts"
+  },
+  "engines": {
+    "node": ">= 16"
+  }
+}

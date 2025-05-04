@@ -1,0 +1,29 @@
+{
+  "name": "kscpm-rsbuild",
+  "version": "1.0.0",
+  "description": "Rsbuild脚手架",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m2417181901/kscpm-Rsbuild.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m2417181901/kscpm-Rsbuild/issues"
+  },
+  "homepage": "https://github.com/m2417181901/kscpm-Rsbuild#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "glob": "^7.1.2",
+    "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4",
+    "please-upgrade-node": "^3.2.0",
+    "validate-npm-package-name": "^3.0.0",
+    "yeoman-generator": "^5.0.0",
+    "yosay": "^2.0.1"
+  }
+}
