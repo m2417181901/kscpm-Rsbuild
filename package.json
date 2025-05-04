@@ -11,6 +11,10 @@
   "files": [
     "src"
   ],
+  "keywords": [
+    "yeoman",
+    "generator"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/m2417181901/kscpm-Rsbuild.git"
