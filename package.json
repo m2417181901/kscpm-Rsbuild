@@ -4,13 +4,15 @@
   "description": "Rsbuild脚手架",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release-patch": "npm version patch && git push --tags && git push && npm publish",
+    "release": "npm run release-patch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/m2417181901/kscpm-Rsbuild.git"
   },
-  "author": "",
+  "author": "mazewei",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/m2417181901/kscpm-Rsbuild/issues"

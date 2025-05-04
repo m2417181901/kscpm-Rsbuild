@@ -30,7 +30,13 @@ class App extends Generator {
                 name: "servicePort",
                 message: "graphql服务端口",
                 default: 8090
-            }            
+            },
+            {
+                type: "input",
+                name: "projectPath",
+                message: "项目路径",
+                default: "console"
+            }    
         ];
         const answers = await this.prompt(prompts);
         const result = this.setProps(answers, pkg);

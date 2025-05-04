@@ -82,7 +82,8 @@
     "@rsbuild/plugin-eslint": "^1.1.0",
     "@rsbuild/plugin-pug": "^1.0.2",
     "@rsbuild/plugin-type-check": "^1.2.1",
-    "@rsbuild/plugin-vue": "^1.0.5"
+    "@rsbuild/plugin-vue": "^1.0.5",
+    "i18never-unplugin": "^1.1.0"
   },
   "nodemonConfig": {
     "watch": [
