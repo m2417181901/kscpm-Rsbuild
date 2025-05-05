@@ -1,19 +1,20 @@
 {
   "name": "generator-kscpm-rsbuild",
   "version": "1.0.4",
-  "description": "Rsbuild脚手架",
-  "main": "src/index.js",
+  "description": "Rsbuild+Vue3+GraphQL脚手架",
+  "main": "generators/app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release-patch": "npm version patch && git push --tags && git push && npm publish",
     "release": "npm run release-patch"
   },
   "files": [
-    "src"
+    "generators"
   ],
   "keywords": [
     "yeoman",
-    "generator"
+    "generator",
+    "yeoman-generator"
   ],
   "repository": {
     "type": "git",

@@ -12,19 +12,18 @@ module.exports = class pkg {
                 message: "项目名称",
                 default: self.constructor._dir || "default",
                 validate: function (input) {
-                    const done = this.async();
-                    const its = validate_npm_package_name(input);
-                    if (!its.validForNewPackages) {
-                        const errors = (its.errors || []).concat(
-                            its.warnings || []
-                        );
-                        const er = new Error(
-                            "Sorry, " + errors.join(" and ") + "."
-                        );
-                        done(er);
-                        return;
-                    };
-                    done(null, true);
+                    return new Promise((resolve, reject) => {
+                        const its = validate_npm_package_name(input);
+                        if (!its.validForNewPackages) {
+                            const errors = (its.errors || []).concat(
+                                its.warnings || []
+                            );
+                            const er = "Sorry, " + errors.join(" and ") + ".";
+                            resolve(er);
+                            return;
+                        };
+                        resolve(true);
+                    })
                 }
             },
             {
@@ -44,26 +43,23 @@ module.exports = class pkg {
                     return answers.updatePkg === false;
                 },
                 validate: function (input) {
-                    const done = this.async();
-                    const its = validate_npm_package_name(input);
-                    if (!its.validForNewPackages) {
-                        const errors = (its.errors || []).concat(
-                            its.warnings || []
-                        );
-                        const er = new Error(
-                            "Sorry, " + errors.join(" and ") + "."
-                        );
-                        done(er);
-                        return;
-                    }
-                    if (fs.existsSync(self.destinationPath(input))) {
-                        const er = new Error(
-                            `Sorry, Existing this directory, please change .`
-                        );
-                        done(er);
-                        return;
-                    }
-                    done(null, true);
+                    return new Promise((resolve, reject) => {
+                        const its = validate_npm_package_name(input);
+                        if (!its.validForNewPackages) {
+                            const errors = (its.errors || []).concat(
+                                its.warnings || []
+                            );
+                            const er = "Sorry, " + errors.join(" and ") + ".";
+                            resolve(er);
+                            return;
+                        }
+                        if (fs.existsSync(self.destinationPath(input))) {
+                            const er = `Sorry, Existing this directory, please change .`;
+                            resolve(er);
+                            return;
+                        }
+                        resolve(true);
+                    })
                 }
             },
             {

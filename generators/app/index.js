@@ -1,4 +1,4 @@
-const Generator = require("yeoman-generator");
+const Generator = require('../base');
 const chalk = require("chalk");
 const _ = require("lodash");
 const yosay = require("yosay");
@@ -47,14 +47,14 @@ class App extends Generator {
         this.copyTpl(["**/*", "**/.*"], ["node_modules"]);
         this.copy("index.html")
     }
-    install() {
-        // 自动安装无效，需要手动安装。 this.npmInstall() 无效
-        this.installDependencies({
-            bower: false,
-            npm: true,
-            yarn: true
-        });
-    }
+    // install() {
+    //     // 自动安装无效，需要手动安装。 this.npmInstall() 无效
+    //     this.installDependencies({
+    //         bower: false,
+    //         npm: true,
+    //         yarn: true
+    //     });
+    // }
 } 
 
 
